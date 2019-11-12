@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service ProductService{
+    rpc GetProductById (ProductByIdRequest) returns (Product);
+
+    rpc GetProductByUuid (ProductByUuidRequest) returns (Product);
+}
+
+message ProductByIdRequest{
+    int32 ProductId = 1;
+}
+
+message ProductByUuidRequest{
+    string ProductUuid = 1;
+}
+
+message Product{
+    int32 ProductId = 1;
+    string ProductUuid = 2;
+}
